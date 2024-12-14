@@ -4,83 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-top: 20px;
-        }
-
-        div {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        td {
-            color: #333;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Todo List</h1>
-    <div>
-        <table>
+<body class="bg-gray-100 font-sans">
+    <h1 class="text-3xl font-bold text-gray-800 text-center mt-8">Todo List</h1>
+
+    <div class="max-w-5xl mx-auto mt-8 bg-white p-6 shadow-lg rounded-lg">
+        <table class="w-full border-collapse">
             <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Mobile No</th>
-                    <th>Age</th>
-                    <th>Department</th>
-                    <th></th>
+                <tr class="bg-purple-500 text-white">
+                    <th class="py-3 px-4 text-left">First Name</th>
+                    <th class="py-3 px-4 text-left">Last Name</th>
+                    <th class="py-3 px-4 text-left">Email</th>
+                    <th class="py-3 px-4 text-left">Mobile No</th>
+                    <th class="py-3 px-4 text-left">Age</th>
+                    <th class="py-3 px-4 text-left">Department</th>
+                    <th class="py-3 px-4"></th>
                 </tr>
             </thead>
+
+            <!-- Table Body -->
             <tbody>
                 <% users.forEach(function(user) { %>
-                    <tr>
-                         <td><%= user.firstName %></td>  
-                         <td><%= user.lastName %></td>  
-                         <td><%= user.email %></td>  
-                         <td><%= user.mobileNo %></td>  
-                         <td><%= user.age %></td>  
-                         <td><%= user.department %></td>  
+                    <tr class="hover:bg-gray-100 even:bg-gray-50">
+                        <td class="py-3 px-4 text-gray-700"><%= user.firstName %></td>
+                        <td class="py-3 px-4 text-gray-700"><%= user.lastName %></td>
+                        <td class="py-3 px-4 text-gray-700"><%= user.email %></td>
+                        <td class="py-3 px-4 text-gray-700"><%= user.mobileNo %></td>
+                        <td class="py-3 px-4 text-gray-700"><%= user.age %></td>
+                        <td class="py-3 px-4 text-gray-700"><%= user.department %></td>
                     </tr>
                 <% }); %>
             </tbody>
